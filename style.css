@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+:root {
+  /*## Colors*/
+  --White: hsl(0, 0%, 100%);
+  --Light-gray: hsl(212, 45%, 89%);
+  --Grayish-blue: hsl(220, 15%, 55%);
+  --Dark-blue: hsl(218, 44%, 22%);
+  /*size*/
+  --img-size: 288px;
+  --img-size-small: 230px;
+}
+
+figure {
+  margin: 0;
+}
+body {
+  background-color: var(--Light-gray);
+  height: 100vh;
+  /*text*/
+  font-size: 15px;
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  /*flex*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-front {
+  background-color: var(--White);
+  box-shadow: 0 10px 20px -10px var(--Grayish-blue);
+  border-radius: 1.5em;
+  text-align: center;
+  /*space*/
+  padding: 1em;
+  /*size*/
+  box-sizing: border-box;
+}
+.img {
+  background-image: url("/images/image-qr-code.png");
+  background-size: contain;
+  border-radius: 1em;
+  /*size*/
+  width: var(--img-size);
+  height: var(--img-size);
+  /*space*/
+  margin: auto;
+}
+.title {
+  /*text*/
+  color: var(--Dark-blue);
+  font-size: 1.5em;
+  /*size*/
+  max-width: var(--img-size);
+  /*space*/
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.text {
+  color: var(--Grayish-blue);
+  /*size*/
+  max-width: var(--img-size);
+  box-sizing: border-box;
+  /*space*/
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.attribution {
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*############### Tiny screen (tiny mobile) ###############*/
+@media only screen and (max-width: 300px) {
+  body {
+    font-size: 12px;
+  }
+  .card-front {
+    width: 90%;
+  }
+  .img {
+    /*size*/
+    width: var(--img-size-small);
+    height: var(--img-size-small);
+  }
+}
+/*############### Landscape mobile ###############*/
+@media only screen and (orientation: landscape) and (max-height: 450px) {
+  .card-front {
+    /*flex*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .img {
+    /*size*/
+    width: calc(var(--img-size-small) / 1.2);
+    height: calc(var(--img-size-small) / 1.2);
+  }
+}
